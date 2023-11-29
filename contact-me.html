@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Contact Me</title>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+</head>
+<body>
 
-  <body>
-    <!-- TODO -->
-  </body>
+  <!-- Contact form -->
+  <form id="contactForm">
+    <!-- Name -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required minlength="3">
+    <div class="error-message" id="nameError"></div>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required pattern="\w+@\w+\.\w+">
+    <div class="error-message" id="emailError"></div>
+
+    <!-- Reason for contacting -->
+    <label for="reason">Reason for contacting:</label>
+    <select id="reason" name="reason" required>
+      <option value="" disabled selected>Select a reason</option>
+      <option value="jobOpportunity">Job opportunity</option>
+      <option value="talkCode">Talk code</option>
+    </select>
+    <div class="error-message" id="reasonError"></div>
+
+    <!-- Job title -->
+    <label for="jobTitle" class="hidden" id="jobTitleLabel">Job Title:</label>
+    <input type="text" id="jobTitle" name="jobTitle" class="hidden">
+    <div class="error-message" id="jobTitleError"></div>
+
+    <!-- Company website -->
+    <label for="companyWebsite" class="hidden" id="companyWebsiteLabel">Company Website:</label>
+    <input type="url" id="companyWebsite" name="companyWebsite" class="hidden">
+    <div class="error-message" id="companyWebsiteError"></div>
+
+    <!-- Coding language  -->
+    <label for="codingLanguage" class="hidden" id="codingLanguageLabel">Coding Language:</label>
+    <select id="codingLanguage" name="codingLanguage" class="hidden">
+      <option value="Choose One" selected>Choose One</option>
+      <option value="HTML">HTML</option>
+      <option value="CSS">CSS</option>
+      <option value="JavaScript">JavaScript</option>
+    </select>
+    <div class="error-message" id="codingLanguageError"></div>
+
+    <!-- Message -->
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required minlength="10"></textarea>
+    <div class="error-message" id="messageError"></div>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="contact-me.js"></script>
+</body>
 </html>
